@@ -20,3 +20,5 @@ We recommend creating a clean Python environment:
 conda create -n cmanet python=3.10 -y
 conda activate cmanet
 pip install -r requirements.txt
+
+<img width="1323" height="770" alt="image" src="https://github.com/user-attachments/assets/d5f99f4b-39f3-4cf0-879b-dec2a23fcfb7" />
