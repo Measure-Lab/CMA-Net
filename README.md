@@ -6,6 +6,7 @@ This repository provides the official PyTorch implementation of **CMA-Net**, dev
 > Submitted to *Medical Image Analysis*, 2025.
 
 ---
+![CMA-Net Framework](src/framework.png)
 
 ## Motivation
 Fine-grained histopathological image classification is challenging due to subtle inter-class differences and large intra-class variability. Conventional CNNs or Transformers often struggle to capture highly discriminative lesion cues.  
