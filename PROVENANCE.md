@@ -1,13 +1,36 @@
 # PROVENANCE & ANTI-PLAGIARISM NOTES
 
-This repository uses the following practices to help establish authorship and deter plagiarism:
+This repository accompanies the manuscript submission:
 
-1. **AGPL-3.0 license (pre-publication)**: Derivative works must remain open-source if distributed.
-2. **Signed Releases & Tags**: Create a signed git tag (e.g., `v1.0.0-preprint`) for this exact version.
-3. **Checksums**: Publish SHA256 checksums of release artifacts.
-4. **CITATION.cff**: Provides machine-readable citation metadata.
-5. **Reproducible Scripts**: Deterministic seeds, pinned requirements.
-6. **(Optional) Preprint**: Consider uploading a preprint (e.g., arXiv) to register timestamped precedence.
-7. **Private During Review**: Keep the repo private and provide editors with access; switch public after acceptance.
+**"CMA-Net: Conditioned Morphology-Aware Network" (2025, under peer review)**
 
-> Replace this file with concrete release notes and checksums when you publish an official release.
+---
+
+## Authorship & Originality
+- The methods, code, and experiments in this repository were developed by the authors of the manuscript.
+- This repository is provided to journal editors and peer reviewers to verify reproducibility and originality.
+- To prevent unauthorized reuse prior to publication, the repository is kept **private during review**.
+
+---
+
+## Licensing (Pre-publication)
+- This project is licensed under the **GNU Affero General Public License v3.0 (AGPL-3.0)** during the review period.
+- The AGPL-3.0 license requires that derivative works remain open-source if distributed.
+- After acceptance, the license may be updated to a more permissive license depending on publisher policy.
+
+---
+
+## Integrity & Reproducibility
+- **Signed Releases & Tags**: Each release or submission version will be signed and tagged.
+- **Checksums**: Release artifacts may be accompanied by SHA256 checksums for verification.
+- **CITATION.cff**: Machine-readable citation metadata is included in this repository.
+- **Determinism**: Scripts use fixed seeds and pinned dependencies to ensure reproducibility.
+
+---
+
+## Important Notes
+- **Public After Acceptance**: Upon acceptance, the repository will be made public, accompanied by formal release notes and checksums.
+
+---
+
+_Last updated: August 16, 2025_
