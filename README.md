@@ -1,50 +1,46 @@
-# CMA-Net: Conditioned Morphology-Aware Network (PathMNIST)
+# CMA-Net: Conditioned Medical Attention Network for AI-Assisted Clinical Diagnosis of Fine-Grained Histopathological Lesions
 
-> Official PyTorch implementation (starter) for the paper code artifact.
+[![Paper](https://img.shields.io/badge/Paper-Medical%20Image%20Analysis-blue)](link_to_pdf)  
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPL--3.0-green.svg)](./LICENSE)  
 
-This repo provides a **clean, reproducible** training script and a modular CMA-Net implementation tested on **PathMNIST (32×32)**.
+This repository provides the **official PyTorch implementation** of **CMA-Net**, introduced in our paper:  
 
-## Quick Start
+> **CMA-Net: Conditioned Medical Attention Network for AI-Assisted Clinical Diagnosis of Fine-Grained Histopathological Lesions**  
+> Submitted to *Medical Image Analysis*, 2025.  
 
+---
+
+## 🔬 Motivation
+Fine-grained histopathological image classification remains challenging due to **subtle inter-class differences** and **high intra-class variability**. Existing CNN- or Transformer-based approaches often fail to capture discriminative lesion cues.  
+
+**CMA-Net** introduces a **Conditioned Medical Attention (CMA) module**, which:  
+- Learns **condition-guided feature modulation** to highlight discriminative lesion regions.  
+- Integrates **multi-scale local-global dependencies** through hybrid convolution-attention blocks.  
+- Achieves state-of-the-art results on benchmark medical datasets (e.g., PathMNIST).  
+
+---
+
+## 🚀 Quick Start
+
+### 1. Environment
 ```bash
-# 1) (Recommended) create a fresh virtual env (conda or venv)
-# conda create -n cmanet python=3.10 -y && conda activate cmanet
+# create a new environment
+conda create -n cmanet python=3.10 -y
+conda activate cmanet
 
-# 2) Install dependencies
+# install dependencies
 pip install -r requirements.txt
 
-# 3) Train on PathMNIST (RGB)
-python scripts/train.py --rgb --epochs 200 --batch 128
+# Train CMA-Net on PathMNIST (RGB, 32×32)
+python scripts/train.py --config configs/pathmnist.yaml --rgb
 
-# 4) Evaluate a saved checkpoint
 python scripts/eval.py --ckpt results/cmanet_pathmnist_best.pth --rgb
-```
 
-## Expected Results (PathMNIST @ 32×32)
+CMA-Net/
+│── configs/         # YAML configs for datasets/experiments
+│── scripts/         # Training, evaluation, profiling scripts
+│── models/          # CMA-Net implementation
+│── data/            # Auto-downloaded medmnist datasets
+│── results/         # Checkpoints & logs
+│── README.md        # This file
 
-We provide a simple baseline configuration:
-- Optimizer: AdamW (lr=3e-4, wd=1e-4)
-- Scheduler: CosineAnnealingWarmRestarts (T0=10, Tmult=2)
-- Loss: CrossEntropyLoss (label smoothing=0.1)
-- AMP: enabled by default on CUDA
-
-Fill your **exact** metrics here after running:
-| Model  | Top-1 | Top-5 | AUC (macro) | FLOPs | Params |
-|--------|------:|------:|------------:|------:|-------:|
-| CMA-Net (ours) | xx.xx | 99.9x | 0.9xx | 0.xxG | xx.xM |
-
-## Reproducibility
-- Fixed seed and deterministic cuDNN (benchmark disabled).
-- Config file in `configs/pathmnist.yaml` captures key hyperparameters.
-- FLOPs & Params via `thop` in `scripts/profile.py`.
-
-## Data
-`medmnist` will auto-download PathMNIST to `./data` at first run.
-
-## Citation
-Add your preferred citation (or edit `CITATION.cff`).
-
-## License
-This starter uses **AGPL-3.0** by default *before publication* to discourage code plagiarism. 
-You can switch to a more permissive license (e.g., MIT) **after acceptance**.
-See `LICENSE` and `PROVENANCE.md` for more details.
