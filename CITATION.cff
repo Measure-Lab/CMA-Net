@@ -3,7 +3,7 @@ message: "If you use this code, please cite it as below."
 title: "CMA-Net: Conditioned Morphology-Aware Network"
 authors:
   - family-names: "Huang"
-    given-names: "Kele"
+    given-names: "Hao"
     email: ""
 license: "AGPL-3.0"
 date-released: "2025-08-16"
